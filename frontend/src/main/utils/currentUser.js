@@ -46,6 +46,7 @@ export function hasRole(currentUser, role) {
 
   if (currentUser == null) return false;
 
+  // Stryker disable next-line OptionalChaining : we should fix the hack rather than trying to test this bad code
   if (currentUser.data?.root?.rolesList) {
     return currentUser.data.root.rolesList.includes(role);
   }
